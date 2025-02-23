@@ -1,0 +1,7 @@
+*/*
+!.gitignore
+!fish/config.fish
+!ghostty/config
+!helix/config.toml
+!mise/config.toml
+!homebrew/Brewfile

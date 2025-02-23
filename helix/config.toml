@@ -1,0 +1,17 @@
+theme = "rose_pine_moon"
+
+[editor]
+line-number = "relative"
+lsp.display-messages = true
+lsp.display-inlay-hints = true
+idle-timeout = 100
+soft-wrap.enable = true
+cursorline = true
+color-modes = true
+cursor-shape = { insert = 'bar', normal = 'underline', select = 'block' }
+indent-guides.render = true
+
+[editor.statusline]
+left = [ "mode", "spacer", "spinner", "diagnostics" ]
+center = [ "version-control", "file-name", "read-only-indicator", "file-modification-indicator" ]
+right = [ "workspace-diagnostics", "spacer", "selections", "spacer", "position-percentage" ]

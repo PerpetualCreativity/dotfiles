@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+
+# first argument: TLD, ex: com
+# second argument: domain, ex: vedthiru.com
+
+set registry_rdap (curl -s https://rdap.iana.org/domain/$argv[1] | jq -r 'first(.links[] | select(.title == "RDAP Server")) | .href')
+
+curl -s $registry_rdap'domain/'$argv[2]

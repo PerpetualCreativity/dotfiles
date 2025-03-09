@@ -1,9 +1,8 @@
-theme = rose-pine-moon
+theme = light:rose-pine-dawn,dark:rose-pine-moon
 shell-integration = fish
-font-family = Iosevka Term
+font-family = Annotation Mono
 # background-opacity = 0.9
 # background-blur = true
 macos-titlebar-style = tabs
-macos-icon = official
 
 keybind = global:cmd+opt+tab=toggle_quick_terminal

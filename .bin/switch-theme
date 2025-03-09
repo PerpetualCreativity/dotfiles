@@ -1,0 +1,30 @@
+#!/usr/bin/env fish
+
+set dark false
+if test (count $argv) -eq 1
+    and test $argv[1] = dark
+
+    set dark true
+end
+
+if set -q DARKMODE
+    and test $DARKMODE -eq 1
+
+    set dark true
+end
+
+if $dark
+    set old dawn
+    set new moon
+else
+    set old moon
+    set new dawn
+end
+
+cd (dirname (status --current-filename))
+
+sed -i '' "s/$old/$new/" ../helix/config.toml
+pkill -USR1 hx
+
+sed -i '' "s/$old/$new/" ../fish/config.fish
+pkill -USR1 fish

@@ -1,0 +1,12 @@
+# This is just an example for you to get started with.
+# Learn more: https://github.com/hitblast/cutler
+
+[finder]
+AppleShowAllFiles = true
+CreateDesktop = false
+
+[NSGlobalDomain]
+ApplePressAndHoldEnabled = true
+
+[org.hammerspoon.Hammerspoon]
+MJConfigFile = "~/.config/hammerspoon/init.lua"

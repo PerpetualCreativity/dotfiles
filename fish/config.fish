@@ -1,4 +1,3 @@
-
 /opt/homebrew/bin/brew shellenv | source
 
 function fish_prompt
@@ -30,13 +29,19 @@ function fish_greeting
     echo (set_color normal)
 end
 
-set EDITOR hx
+set -g EDITOR hx
+
+function source_config --on-signal USR1
+    source ~/.config/fish/config.fish
+end
+
+fish_add_path ~/.config/.bin
 
 if status is-interactive
     alias h 'hx .'
     alias sl 'sl -wG'
     alias edit 'hx ~/.config'
-    alias reload 'XDG_CONFIG_HOME=~/.config brew bundle install --global --cleanup'
+    alias reload 'brew bundle install --file=~/.config/homebrew/Brewfile --cleanup'
 
     function mkcd
         mkdir $argv[1]
@@ -49,9 +54,13 @@ if status is-interactive
     function notes
         hx ~/notes/$argv[1].md
     end
+    function manp
+        man -t $argv | ps2pdf - /tmp/man_$argv[1].pdf
+        and open -a Skim /tmp/man_$argv[1].pdf
+    end
 
     zoxide init fish --cmd cd | source
-    fish_config theme choose 'Rosé Pine Moon'
+    fish_config theme choose rose-pine-moon
 end
 
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :

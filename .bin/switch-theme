@@ -16,9 +16,11 @@ end
 if $dark
     set old dawn
     set new moon
+    echo dark
 else
     set old moon
     set new dawn
+    echo light
 end
 
 cd (dirname (status --current-filename))

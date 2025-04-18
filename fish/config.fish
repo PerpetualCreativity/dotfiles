@@ -23,7 +23,7 @@ function fish_right_prompt
 end
 
 function fish_greeting
-    echo -e (set_color white --bold --dim)'todos:'(set_color normal)
+    echo -ne (set_color white --bold --dim)'[TODO]\t'(set_color normal)
     echo -n (set_color white --dim)
     awk -f ~/notes/todos.awk ~/notes/todo.md
     echo (set_color normal)
@@ -64,3 +64,5 @@ if status is-interactive
 end
 
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+# test -r '/Users/vulcan/.opam/opam-init/init.fish' && source '/Users/vulcan/.opam/opam-init/init.fish' >/dev/null 2>/dev/null; or true

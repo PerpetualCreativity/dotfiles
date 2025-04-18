@@ -8,7 +8,11 @@ end
 
 function handle(is_dark_t)
   theme = is_dark_t and "dark" or "light"
-  output, status, type, rc = hs.execute("~/.config/.bin/switch-theme " .. theme)
+  output, status, type, rc = hs.execute("/opt/homebrew/bin/fish $HOME/.config/.bin/switch-theme " .. theme)
+  prnt('status', status)
+  prnt('type', type)
+  prnt('rc', rc)
+  prnt(output)
 end
 
 was_dark = is_dark()

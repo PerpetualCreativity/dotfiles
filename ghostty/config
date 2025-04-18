@@ -1,6 +1,9 @@
 theme = light:rose-pine-dawn,dark:rose-pine-moon
 shell-integration = fish
-font-family = Annotation Mono
+font-family = Maple Mono
+# font-family = Annotation Mono
+# font-family-italic = Annotation Mono Italic
+font-feature = +zero,+cv03,+ss03,+ss07,+ss08
 # background-opacity = 0.9
 # background-blur = true
 macos-titlebar-style = tabs
